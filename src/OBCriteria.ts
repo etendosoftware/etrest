@@ -42,6 +42,9 @@ export default class OBCriteria {
     /** Show identifiers */
     private _fields: Array<string>;
 
+    /** Additional Paramaters */
+    private _additionalParams: any;
+
     constructor(axios: AxiosInstance, restWsName: string, entityName: string) {
         this._axios = axios;
         this._restWsName = restWsName;
@@ -91,6 +94,12 @@ export default class OBCriteria {
         return this;
     }
 
+    /** Sets additional request parameters */
+    setAdditionalParameters(params: any): OBCriteria {
+        this._additionalParams = params;
+        return this;
+    }
+
     /** 
      * Add a restriction to the criteria, you must use the Restrictions methods,
      * WARNING: This method reset the _query object 
@@ -128,7 +137,7 @@ export default class OBCriteria {
                 identifiers: this._showIdentifiers,
                 ...(this._fields.length > 0 ? { fields: this._fields.join(",") } : {}),
                 ...(this._distinct ? { distinct: this._distinct } : {}),
-
+                ...this._additionalParams,
             }
         }));
 
