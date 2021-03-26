@@ -33,7 +33,7 @@ export default class OBRest {
     getOBContext(): OBContext | undefined;
     /** Async function to set the context and refreshg the token */
     setOBContext(context: OBContext): Promise<void>;
-    callWebService(name: string, method: Method, params: Array<any>, data: object): Promise<any>;
+    callWebService(name: string, method: Method, params: any, data: object): Promise<any>;
     /** Initializes the conection with rest api */
     static init(url: URL, jwtToken?: string): void;
     /** User login with username and password */

@@ -128,11 +128,12 @@ export default class OBRest {
         OBRest.loginWithToken(jwtToken);
     }
 
-    public async callWebService(name: string, method: Method, params: Array<any>, data: object): Promise<any> {
+    public async callWebService(name: string, method: Method, params: any, data: object): Promise<any> {
         const response = (await this.axios.request({
             method,
             url: name,
-            data
+            data,
+            ...params
         }));
         return response.data
     }

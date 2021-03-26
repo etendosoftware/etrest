@@ -28,6 +28,8 @@ export default class OBCriteria {
     private _showIdentifiers;
     /** Show identifiers */
     private _fields;
+    /** Additional Paramaters */
+    private _additionalParams;
     constructor(axios: AxiosInstance, restWsName: string, entityName: string);
     setShowIdentifiers(value: boolean): OBCriteria;
     setFields(value: Array<string>): OBCriteria;
@@ -39,6 +41,8 @@ export default class OBCriteria {
     setFirstResult(firstResult: number): OBCriteria;
     /** Sets the first result */
     setDistinct(distinct: string): OBCriteria;
+    /** Sets additional request parameters */
+    setAdditionalParameters(params: any): OBCriteria;
     /**
      * Add a restriction to the criteria, you must use the Restrictions methods,
      * WARNING: This method reset the _query object
