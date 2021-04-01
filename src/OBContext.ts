@@ -1,3 +1,5 @@
+import {decode as atob, encode as btoa} from 'base-64'
+
 /**
  * Equivalent to OBContext in openbravo
  * 
