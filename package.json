@@ -10,9 +10,9 @@
   "keywords": [
     "api",
     "rest",
-    "openbravo"
+    "etendo"
   ],
-  "author": "Joaquin Corti",
+  "author": "Etendo Software",
   "license": "MIT",
   "homepage": "https://github.com/etendosoftware/",
   "files": [

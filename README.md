@@ -4,7 +4,7 @@
 
 ## 📄 Documentation
 
-You can see the [code reference here](https://futit.github.io/obrest)
+You can see the [code reference here](https://github.com/etendosoftware/etrest)
 
 ## 🔬 Run tests
 
