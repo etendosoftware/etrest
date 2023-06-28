@@ -1,6 +1,6 @@
 ![](https://exos-solutions.com/wp-content/uploads/2021/12/Etendo-RGB-02.png)
 
-# 📚 OBRest - Rest library for Etendo secure web services módule. 🌐
+# 📚 OBRest - Rest library for Etendo secure web services module. 🌐
 
 ## 📄 Documentation
 
