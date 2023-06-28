@@ -1,63 +1,62 @@
-# OBRest - Rest library for openbravo secure web services módule.
+![](https://exos-solutions.com/wp-content/uploads/2021/12/Etendo-RGB-02.png)
 
-## Documentation
+# 📚 OBRest - Rest library for Etendo secure web services módule. 🌐
+
+## 📄 Documentation
 
 You can see the [code reference here](https://futit.github.io/obrest)
 
-## Previous configuration
+## 🔬 Run tests
 
-You need to set the npm registry and your username and password(base64, username:password) in your ~/.npmrc file.
-
-```
-registry=https://repo.futit.cloud/repository/npm-group/
-_auth=dXNlcm5hbWU6cGFzc3dvcmQK
-```
-
-## Run tests
-
-It's important to run tests before making changes in the openbravo module.
+It's important to run tests before making changes in the Etendo module. 👨‍💻
 
 ```
 $ yarn test
 ```
 
-## Release to nexus
+## 🚀 Release to npm
 
 You should increment the version number of the package.json file and run the following commands.
 
 ```
 $ yarn build
-$ npm publish
+$ npm publish --tag next --access public
 ```
 
-The repository authentication data is available in the **.npmrc** file at the root of the project.
+## 📝 Examples
 
-## Examples
+```
+import { OBRest } from "etrest";
 
-### Initialize app
+let criteria = OBRest.getInstance().createCriteria("Organization");
+```
 
-```jsx
-import { OBRest } from 'obrest';
+### 🚀 Initialize app
+
+```
+import { OBRest } from "obrest";
 
 OBRest.init("http://localhost:8080");
 ```
 
+### 🔐 Login with username and password / token
 
-### Login with username and password / token
-The app should be initialized before login
+The app should be initialized before login 💻
 
-```jsx
-await OBRest.loginWithUserAndPassword("Openbravo","openbravo"); //Make a request to get token
+```
+await OBRest.loginWithUserAndPassword("admin", "admin"); //Make a request to get token
 
-OBRest.loginWithToken("your_token");  //only set token
+OBRest.loginWithToken("your_token"); //only set token
 ```
 
-### Create criterias
-The user should be logged before get data.
-```jsx
+### 📋 Create criterias
+
+The user should be logged before get data. 🗂️
+
+```
 let criteria = OBRest.getInstance().createCriteria("Product");
 
-criteria.add(Restriction.equals("name","Cerveza Lager 0,5L"));
+criteria.add(Restriction.equals("name", "Cerveza Lager 0,5L"));
 
 //make a request to get the products list
 criteria.list();
@@ -65,12 +64,14 @@ criteria.list();
 //make a request to get only the first result
 criteria.uniqueResult();
 ```
-*Check the code reference for more information about Restrictions*
 
-### Create/Update objects
-The user should be logged before create data.
+💬 _Check the code reference for more information about Restrictions_ 💬
 
-```jsx
+### ✏️ Create/Update objects
+
+The user should be logged before create data. 🆕📝
+
+```
 let myProduct = {
     "_entityName":"Product", // this field is required.
     "searchKey": "ES/1234",
@@ -86,23 +87,22 @@ let myProduct = {
     "volume": 0,
     "weight": 0,
     "taxCategory": "E020A69A1E784DC39BE57C41D6D5DB4E"
-} 
+}
 
-let refreshedProduct = await OBRest.getInstance().save(myProduct); //this method save the object in openbravo and return a promise with the saved object.
 
+let refreshedProduct = await OBRest.getInstance().save(myProduct); //this method save the object in etendo and return a promise with the saved object.
 
 // you can save a objects list too
-let refreshedProductList = await OBRest.getInstance().saveList([
-    myProduct
-]); //this method save the objects in openbravo and return a promise with the saved list.
+let refreshedProductList = await OBRest.getInstance().saveList([myProduct]); //this method save the objects in etendo and return a promise with the saved list.
 ```
 
-*It is always better to save lists than individual objects* 
+💬 _It is always better to save lists than individual objects_ 📥💾
 
-### Remove objects
-The user should be logged before delete data.
+### 🗑️ Remove objects
 
-```jsx
+The user should be logged before delete data. 🚫
+
+```
 let myProduct = {
     "_entityName":"Product", // this field is required.
     "searchKey": "ES/1234",
@@ -118,16 +118,13 @@ let myProduct = {
     "volume": 0,
     "weight": 0,
     "taxCategory": "E020A69A1E784DC39BE57C41D6D5DB4E"
-} 
-
-let refreshedProduct = await OBRest.getInstance().remove(myProduct); //this method save the object in openbravo and return a promise with the saved object.
+}
 
 
-// you can remove a objects list too
-let refreshedProductList = await OBRest.getInstance().removeList([
-    myProduct
-]); //this method remove the objects in openbravo and return a promise with the removed list.
+let refreshedProduct = await OBRest.getInstance().remove(myProduct); //this method save the object in etendo and return a promise with the saved object.
+
+// you can remove a objects list too❗
+let refreshedProductList = await OBRest.getInstance().removeList([myProduct]); //this method remove the objects in etendo and return a promise with the removed list.
 ```
 
-*It is always better to remove lists than individual objects* 
-
+_It is always better to remove lists than individual objects_ 📝📤
