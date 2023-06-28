@@ -1,23 +1,20 @@
 {
-  "name": "obrest",
-  "version": "1.1.21",
-  "description": "Libary to connect js apps with openbravo",
+  "name": "etrest",
+  "version": "1.2.0",
+  "description": "Libary to connect js apps with Etendo",
   "main": "lib/index.js",
-  "publishConfig": {
-    "registry": "https://repo.futit.cloud/repository/futit-npm/"
-  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/futit/obrest/"
+    "url": "git+https://github.com/etendosoftware/etrest"
   },
   "keywords": [
     "api",
     "rest",
-    "openbravo"
+    "etendo"
   ],
-  "author": "Pablo Androetto",
-  "license": "GNU",
-  "homepage": "https://github.com/futit/",
+  "author": "Etendo Software",
+  "license": "MIT",
+  "homepage": "https://github.com/etendosoftware/",
   "files": [
     "lib/**/*"
   ],
@@ -33,6 +30,8 @@
     "build": "tsc"
   },
   "dependencies": {
-    "axios": "^0.21.1"
+    "@types/base-64": "^0.1.3",
+    "axios": "^0.21.1",
+    "base-64": "^1.0.0"
   }
 }
