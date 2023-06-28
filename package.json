@@ -1,7 +1,7 @@
 {
   "name": "etrest",
   "version": "1.2.0",
-  "description": "Libary to connect js apps with Etendo",
+  "description": "Library to connect js apps with Etendo",
   "main": "lib/index.js",
   "repository": {
     "type": "git",
