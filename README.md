@@ -34,7 +34,7 @@ let criteria = OBRest.getInstance().createCriteria("Organization");
 ### 🚀 Initialize app
 
 ```
-import { OBRest } from "obrest";
+import { OBRest } from "etrest";
 
 OBRest.init("http://localhost:8080");
 ```
